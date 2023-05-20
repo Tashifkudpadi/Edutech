@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edutech</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css.map" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    /> -->
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- animation -->
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+
+    <!-- for gsap starts -->
+    <script src="./assets/js/jquery.js"></script>
+    <!-- gsap-latest-beta.min.js -->
+    <script src="./assets/js/gsap.js"></script>
+    <!-- ScrollTrigger.min.js -->
+    <script src="./assets/js/scrolltriggergsap.js"></script>
+    <!-- for gsap end -->
+
+    <style>
+      :root {
+        font-family: Helvetica;
+        /*-------------Colors------------- */
+        --ColorDarkA: hsl(0, 0%, 0%);
+        --ColorDarkB: hsl(0, 0%, 18%);
+        --ColorWhiteA: hsl(0, 0%, 94%);
+        --ColorWhiteB: hsl(0, 0%, 90%);
+        /*-------------FontSize -- Golden Ratio (1.618) Base Size 13px------------- */
+        --FontH1: 233.25px;
+        --FontH2: 144.16px;
+        --FontH3: 89.1px;
+        --FontH4: 55.07px;
+        --FontH5: 34.03px;
+        --FontParagraph: 21.03px;
+        --FontSubtitle: 13px;
+        /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+        --GoldenRatio1: 1920px;
+        --GoldenRatio2: 1186.65px;
+        --GoldenRatio3: 733.41px;
+        --GoldenRatio4: 453.28px;
+        --GoldenRatio5: 280.15px;
+        --GoldenRatio6: 173.15px;
+        --GoldenRatio7: 107.01px;
+        --GoldenRatio8: 66.14px;
+        --GoldenRatio9: 40.88px;
+        --GoldenRatio10: 25.27px;
+      }
+
+      /* #wrapper {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+
+      #wrapper h1 {
+        font-size: var(--FontH2);
+        background-color: #7f5a83;
+        background-image: linear-gradient(to right, #7f5a83 0%, #bdd4e7 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      } */
+
+      #ImgWrapper {
+        position: relative;
+        width: 100vw;
+        /* height: 100vh; */
+        padding: 40px 0;
+        overflow: hidden;
+        perspective: 2200px;
+        background: rgb(149, 182, 243);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url("./assets/imgs/3d-technology.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #ImgWrapper img {
+        position: absolute;
+        box-shadow: 0 0 31px black;
+      }
+
+      #ImgWrapper #img1 {
+        z-index: 1;
+        height: 50vh;
+        bottom: 54%;
+        left: 7%;
+      }
+
+      #ImgWrapper #img2 {
+        z-index: 2;
+        height: 45vh;
+        bottom: 54%;
+        right: 10%;
+      }
+
+      #ImgWrapper #img3 {
+        z-index: 3;
+        height: 40vh;
+        bottom: 30%;
+        right: 10%;
+      }
+
+      #ImgWrapper #img4 {
+        z-index: 4;
+        height: 31vh;
+        bottom: 32%;
+        left: 10%;
+      }
+
+      #ImgWrapper #img5 {
+        z-index: 5;
+        height: 50vh;
+        bottom: 28%;
+        left: 36%;
+      }
+
+      #ImgWrapper #img6 {
+        z-index: 6;
+        height: 31vh;
+        bottom: 13%;
+        left: 13%;
+      }
+
+      #ImgWrapper #img7 {
+        z-index: 7;
+        height: 31vh;
+        bottom: 10%;
+        right: 13%;
+      }
+
+      #codeby {
+        /* height: 140vh; */
+        /* width: 100vw; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #codeby h5 {
+        /* background-color: #9d9c9d;
+        background-image: linear-gradient(to right, #373037 0%, #444448 100%);
+        background-size: 100%;
+        font-size: 1.2rem;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent; */
+        font-size: 1rem;
+        font-style: italic;
+        background-color: #fff;
+        border-radius: 18px;
+        padding: 6px 20px;
+        color: #2d2c2c;
+      }
+
+      /*-------------@media (max-width: 1920px)------------- */
+
+      @media (max-width: 1920px) {
+        :root {
+          /*-------------FontSize (PX to VW Conversion With Viewport Width 1920px)------------- */
+          --FontH1: 12.148vw;
+          --FontH2: 7.508vw;
+          --FontH3: 4.641vw;
+          --FontH4: 2.868vw;
+          --FontH5: 1.772vw;
+          --FontParagraph: 1.095vw;
+          --FontSubtitle: 0.677vw;
+          /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+          --GoldenRatio1: 100vw;
+          --GoldenRatio2: 61.805vw;
+          --GoldenRatio3: 38.198vw;
+          --GoldenRatio4: 23.608vw;
+          --GoldenRatio5: 14.591vw;
+          --GoldenRatio6: 9.018vw;
+          --GoldenRatio7: 5.573vw;
+          --GoldenRatio8: 3.445vw;
+          --GoldenRatio9: 2.129vw;
+          --GoldenRatio10: 1.316vw;
+        }
+      }
+
+      /*-------------/@media (max-width: 1920px)------------- */
+
+      /*-------------@media (max-width: 400px)------------- */
+
+      @media (max-width: 400px) {
+        :root {
+          /*-------------GoldenRatio (1.618) (Viewport Width 400px) Base Size 13px------------- */
+          --FontH1: 58.313vw;
+          --FontH2: 36.04vw;
+          --FontH3: 22.275vw;
+          --FontH4: 13.768vw;
+          --FontH5: 8.508vw;
+          --FontParagraph: 5.258vw;
+          --FontSubtitle: 3.25vw;
+          /*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
+          --GoldenRatio1: 100vw;
+          --GoldenRatio2: 61.805vw;
+          --GoldenRatio3: 38.197vw;
+          --GoldenRatio4: 23.608vw;
+          --GoldenRatio5: 14.59vw;
+          --GoldenRatio6: 9.018vw;
+          --GoldenRatio7: 5.572vw;
+          --GoldenRatio8: 3.445vw;
+          --GoldenRatio9: 2.13vw;
+          --GoldenRatio10: 1.317vw;
+        }
+
+        #wrapper h1 {
+          font-size: var(--FontH5);
+        }
+
+        #ImgWrapper #img1 {
+          height: 22vh;
+          bottom: 200%;
+          left: 7%;
+        }
+
+        #ImgWrapper #img2 {
+          height: 22vh;
+          bottom: 70%;
+          right: 7%;
+        }
+
+        #ImgWrapper #img3 {
+          height: 22vh;
+          bottom: 35%;
+          right: 35%;
+        }
+
+        #ImgWrapper #img4 {
+          height: 22vh;
+          bottom: 61.89%;
+          left: 13%;
+        }
+
+        #ImgWrapper #img5 {
+          height: 35vh;
+          left: 46%;
+          bottom: 31%;
+        }
+
+        #ImgWrapper #img6 {
+          height: 17vh;
+          bottom: 22%;
+        }
+
+        #ImgWrapper #img7 {
+          height: 18vh;
+          left: 22%;
+        }
+      }
+      #codeby ul li {
+        text-decoration: none;
+        font-size: 0.7rem;
+        margin: 4px 0;
+        padding: 0;
+        /* list-style: none; */
+      }
+      #codeby ul {
+        padding: 0;
+      }
+
+      #codeby ul li::before {
+        content: "\2022";
+        color: #fff;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section_one">
+      <div class="container-fluid hero_main">
+        <div
+          class="container d-flex justify-content-between py-3"
+          data-aos="fade"
+        >
+          <div>
+            <h3>ParXcellence</h3>
+          </div>
+
+          <div class="social d-md-block d-none mx-5">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="container nav_container d-md-none d-block">
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-ul" id="nav-ul">
+            <li><a href="#">Home </a></li>
+            <li><a href="#">About </a></li>
+            <li><a href="#">Event Highlights </a></li>
+            <li><a href="#">Who Should Attend </a></li>
+            <li><a href="#">Speakers </a></li>
+            <li><a href="#">Who Should Sponsor </a></li>
+            <li><a href="#">Why Sponsor </a></li>
+            <li><a href="#">Workshop </a></li>
+            <li><a href="#">Partners </a></li>
+          </ul>
+        </div>
+
+        <!--HamBurger Icon-->
+        <!-- desktop navbar-->
+        <div class="container d-md-block d-none">
+          <!-- <div class="pt-3">
+            <h4>ParXcellence</h4>
+          </div> -->
+
+          <div class="bars" id="nav-action" data-aos="fade">
+            <span class="bar"> </span>
+          </div>
+
+          <nav id="nav">
+            <ul>
+              <li class="shape-circle circle-one">
+                <a href="#section_eleventh">Partners </a>
+              </li>
+              <li class="shape-circle circle-one">
+                <a href="#section_tenth">Workshop </a>
+              </li>
+              <li class="shape-circle circle-three">
+                <a href="#section_eight">Why Sponsor </a>
+              </li>
+              <li class="shape-circle circle-four">
+                <a href="#section_seven">Who Should Sponsor </a>
+              </li>
+              <li class="shape-circle circle-five">
+                <a href="#section_five">Speakers </a>
+              </li>
+              <li class="shape-circle circle-five">
+                <a href="#section_four">Who Should Attend </a>
+              </li>
+              <li class="shape-circle circle-five">
+                <a href="#section_three">Event Highlights </a>
+              </li>
+              <li class="shape-circle circle-five">
+                <a href="#section_two">About </a>
+              </li>
+              <li class="shape-circle circle-six">
+                <a href="./index.html">Home</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!--Main Body Content-->
+        <div class="content text-center" data-aos="zoom-out">
+          <h1 data-aos="zoom-out">
+            EduTech Oman <br />
+            2040 Summit
+          </h1>
+          <h3>6th -7th September 2023</h3>
+          <h2>Muscat - Sultanate of Oman</h2>
+
+          <div class="timer" id="timer">
+            <span id="days"></span>
+            <span id="hour"></span>
+            <span id="mins"></span>
+            <span id="secs"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_two">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 py-5" data-aos="fade-right">
+            <img
+              src="./assets/imgs/girl.jpg"
+              alt="img"
+              class="img-fluid rounded"
+            />
+            <p class="pt-3">
+              ParXcellence is taking a step to address the latest technological
+              advances in the education sector of Oman to accelerate the
+              learning skills and create a benchmark in the education sector.
+            </p>
+          </div>
+          <div class="col-md-6 py-5" data-aos="fade-left">
+            <h3 class="py-3">About the Conference</h3>
+            <p>
+              Oman’s Vision 2040 is the gateway to become a developed country
+              under His Majesty Haitham bin Tarik who is aiming at promoting the
+              country’s position in different sectors over the next two decades.
+            </p>
+            <p>
+              One of the ambitions goals in Vision 2040 is developing a
+              favorable environment to attract talents in the labour market. For
+              this purpose, It outlines, ’a national system that empowers human
+              capabilities in the educational sector and nurtures scientific
+              research innovation, and creativity to build a knowledge based
+              economy and society.
+            </p>
+            <p>
+              The Vision 2040 stresses on improving educational outcomes that
+              have become necessary to build Omanis’. This is attainable through
+              increasing the quality of education which requires developing
+              scientific and educational curriculum, development of educational
+              institutions, educators, the application of international
+              standards, the use of modern teaching and learning technologies.
+            </p>
+
+            <p>We look forward to hosting you soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_three">
+      <div class="container py-5">
+        <div class="row text-center text-light py-5" data-aos="zoom-in">
+          <h3>Event Highlights</h3>
+          <p>
+            We believe leaders engaged in reshaping the education space are
+            truly the backbone of society.
+          </p>
+          <p>
+            At the EduTech Oman 2040 Conference, we bring them together under
+            one roof, understand innovations that can help them simplify and
+            improve the education transmittal process. which will include
+            strategies to engage teacher and students in solving significant
+            problems through EduTech.
+          </p>
+          <p>
+            EduTech Oman will offer world-class content and spotlights effective
+            strategies that will power the pedagogical education models of the
+            21st century by attracting the most dynamic leaders in the education
+            sector and promises to bring fresh insights and perspectives to
+            empower, inspire, and enrich the global learning community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_four">
+      <div class="img-container bg-light">
+        <div class="container">
+          <div class="text-center pt-5">
+            <h3>Who Should Attend ?</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div class="content-left">
+                <div class="box-item" data-aos="fade-right">
+                  <div class="text">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h4>Ministries & Authorities</h4>
+                    <p>
+                      Government institutions and regulators responsible for
+                      setting standards and framework for the education
+                      eco-system
+                    </p>
+                  </div>
+                </div>
+
+                <div class="box-item" data-aos="fade-right">
+                  <div class="text">
+                    <i class="fa-solid fa-school"></i>
+                    <h4>Head of Educational Institutions</h4>
+                    <p>
+                      Executive Principal, Principal, Head Teacher, Deputy Head,
+                      Head of Primary & Secondary, Head of Universities etc.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="box-item" data-aos="fade-right">
+                  <div class="text">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <h4>Investors & Owners</h4>
+                    <p>
+                      Private Equity, Venture Capital, Impact Investors, Family
+                      Businesses & Investment Authorities
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div class="show-box">
+                <img src="./assets/imgs/arab.jpg" alt="img" class="rounded" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div class="content-right">
+                <div class="box-item" data-aos="fade-left">
+                  <div class="text">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h4>Key Stakeholders</h4>
+                    <p>Active players in the education ecosystem</p>
+                  </div>
+                </div>
+
+                <div class="box-item" data-aos="fade-left">
+                  <div class="text">
+                    <i class="fa-solid fa-building-user"></i>
+                    <h4>Head of Departments</h4>
+                    <p>
+                      Academics, Inclusion, Teaching & Learning, Learning
+                      Technologies, Admissions, Curriculum, STEM etc
+                    </p>
+                  </div>
+                </div>
+
+                <div class="box-item" data-aos="fade-left">
+                  <div class="text">
+                    <i class="fa-sharp fa-regular fa-building"></i>
+                    <h4>Enterprise Organizations</h4>
+                    <p>
+                      Service / Solution providers, product suppliers,
+                      consultants, technology vendors & companies supporting the
+                      education eco-system
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_five" class="site mt-5">
+      <div class="container-fluid px-5">
+        <h2 class="text-center py-4">Esteemed Speakers</h2>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- 1 -->
+            <div class="row">
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/nabila-removebg-preview-500.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h5>Nabila Al Macki</h5>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Chair - Oman Association for Quality in Higher Education
+                        (OAQHE) Deputy Dean Majan University College
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/yarub-removebg-preview-400.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h5>Yarub Almamari</h5>
+                      <p>Digital Services Specialist</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Ministry of Education - Oman Vice President - Omani
+                        Association for Educational Technologies
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 3 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/dr-_ali_alhakami_pic_nat-removebg-preview-469.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Ali Siddiq Alhakami</h6>
+                      <p>President</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        -Inma Education Former Assistant Deputy Minister for
+                        Educational Development, Ministry of Education, Saudi
+                        Arabia
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 4 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/dr-_abhilasha-removebg-preview-final.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Abhilasha Singh Panwar</h6>
+                      <p>Education Specialist</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        STEM Curriculum Development Ministry of Education and
+                        Higher Education, Qatar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="row">
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/dr-_ahmed_al_mamari_photo-removebg-preview-500.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Ahmed Al Mamari</h6>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Dean of Higher College of Technology “UTAS-Muscat”
+                        University of Technology and Applied Sciences
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 6 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/massarth-removebg-preview-400.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Massrat Shaikh</h6>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Educational Psychologist Al Ahlam Training & Higher
+                        Education Services
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 7 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/gilda_scarfe-removebg-preview-500.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Gilda Scarfe</h6>
+                      <p>CEO and Founder</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Mental Toughness Institute Positive Ed Advisory Board
+                        Member - Global Flourishing Study led by Harvard
+                        University
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 8 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/kai_vacher-removebg-preview-new-400.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Kai Vacher</h6>
+                      <p>Principal</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>British School Muscat & British School Salalah</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 9 -->
+
+            <div class="row">
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/maryam033-removebg-preview-500.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Maryam Khalifa Al Amri</h6>
+                      <p>Founder & CEO</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>Youth Vision and Innovation Hub Institute</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 10-->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/ari_pokka_final-removebg-preview.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Ari Pokka</h6>
+                      <p>
+                        Co-founder & CEO of Finnish Education Institute Ltd.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        High School Principal & Leader of Finnish and
+                        International Principals Associations Former President
+                        of International Confederation of Principals
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 11 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/dr-_reshmy-removebg-preview.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Dr. Reshmy Krishnan</h6>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Head of Research Centre & Associate Professor in
+                        Computing Muscat College
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 12 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/helena-removebg-preview-crop-420.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Helena Ripatti</h6>
+                      <p>Principal</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>Finland Oman School</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="row">
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/balqees-removebg-preview1-411.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Balqees Al Hassani</h6>
+                      <p>President</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>President Knowledge Oman</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 14 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/helmi-riikka_olkinuora-removebg-preview-500.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Helmi-Riikka Olkinuora</h6>
+                      <p>Head</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>Head of Primary Finland Oman School</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 15 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/amjed_photo-removebg-preview-485.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>
+                        Dr. Amjed Sid Ahmed <br />
+                        Mohamed Sid Ahmed
+                      </h6>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        Director of Research and Innovation Office (RIO) Global
+                        College of Engineering and Technology (GCET)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 16 -->
+              <div
+                class="item swiper-slide col-md-3"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-easing="ease-out"
+              >
+                <div class="slider_card">
+                  <div class="head">
+                    <div class="blur"></div>
+                    <div class="thumbnail">
+                      <img
+                        src="./assets/imgs/sigve-removebg-preview-406.png"
+                        alt="img"
+                      />
+                    </div>
+                    <div class="meta">
+                      <h6>Sigve Austheim</h6>
+                      <p>Chief Learning Officer</p>
+                    </div>
+                  </div>
+
+                  <div class="main">
+                    <div class="brief">
+                      <strong>About</strong>
+                      <p>
+                        BQ Education Group Director Top International Schools
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="section_six"
+      data-aos="fade-up"
+      data-aos-duration="500"
+      data-aos-delay="500"
+      data-aos-easing="ease-out"
+    >
+      <div class="container pb-5 mt-5">
+        <div class="row">
+          <div class="col-md-5 text-end">
+            <img
+              src="https://pagexl-as.sgp1.digitaloceanspaces.com/0e3f715c-8587/eman_1-removebg-preview-cropped-392.png"
+              alt="img"
+              width="240"
+            />
+          </div>
+          <div
+            class="col-md-7 d-flex justify-content-center align-items-center flex-column"
+          >
+            <h3>Eman Othman Al Khayari</h3>
+            <p>Member of Organizing Committee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_seven">
+      <div id="ImgWrapper">
+        <img id="img1" src="./assets/imgs/image.png" alt="img" />
+        <img id="img2" src="./assets/imgs/side-view-woman-.jpg" alt="img" />
+        <img id="img3" src="./assets/imgs/woman_vr.jpg" alt="img" />
+        <img id="img4" src="./assets/imgs/hero.jpg" alt="img" />
+        <img id="img5" src="./assets/imgs/woman_vr.jpg" alt="img" />
+        <img id="img6" src="./assets/imgs/image_3.png" alt="img" />
+        <img id="img7" src="./assets/imgs/vr.png" alt="img" />
+
+        <div id="codeby">
+          <div class="container text-light">
+            <div class="mb-4">
+              <h1 class="text-center">Who Should Sponsor?</h1>
+            </div>
+
+            <div class="row py-2">
+              <div class="col-md-4">
+                <h5>E-Learning</h5>
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 60px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+                <ul class="py-3">
+                  <li>E-Books and Magazines</li>
+                  <li>E-Learning and virtual learning environments</li>
+                  <li>ELearning tools / Online Learning Environments</li>
+                  <li>Internet based learning solutions</li>
+                  <li>Online content & resources</li>
+                  <li>Video Conferencing / Tele-Presence</li>
+                </ul>
+              </div>
+
+              <div class="col-md-4">
+                <h5>Innovation and Technology</h5>
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 80px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+                <ul class="py-3">
+                  <li>3D Printing</li>
+                  <li>App Development Smart Cards</li>
+                  <li>Augmented Reality Devices</li>
+                  <li>Modeling</li>
+                  <li>Simulation</li>
+                  <li>Smart phones</li>
+                  <li>Robotics</li>
+                </ul>
+              </div>
+
+              <div class="col-md-4">
+                <h5>
+                  Teaching, Training & Learning <br />
+                  Solutions
+                </h5>
+
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 80px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+
+                <div class="d-flex">
+                  <ul class="py-3">
+                    <li>Audio / Visual equipment</li>
+                    <li>CAD / CAM tools</li>
+                    <li>Digital content</li>
+                    <li>Games and learning</li>
+                    <li>Gamification</li>
+                    <li>Interactive Technologies</li>
+                    <li>Learning and collaboration systems</li>
+                  </ul>
+                  <ul class="py-3">
+                    <li>Learning Apps</li>
+                    <li>Learning Management Systems</li>
+                    <li>M-Learning</li>
+                    <li>Mobile Apps</li>
+                    <li>White boards and Displays</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row py-4">
+              <div class="col-md-4">
+                <h5>
+                  Learning Management <br />
+                  Solutions
+                </h5>
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 80px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+                <div class="d-flex">
+                  <ul class="py-3">
+                    <li>Access control and management.</li>
+                    <li>
+                      Cloud Based Library <br />
+                      Solutions.
+                    </li>
+                    <li>Collaboration Tools.</li>
+                    <li>Content Management Solutions.</li>
+                    <li>Digital Curriculum Resources.</li>
+                  </ul>
+                  <ul class="py-3">
+                    <li>Facilities Management Services.</li>
+                    <li>RFID Solutions.</li>
+                    <li>Self Service Terminals.</li>
+                    <li>Staff Management and HR Solutions.</li>
+                    <li>Student and Parent Communication Solutions.</li>
+                    <li>Security Solutions.</li>
+                    <li>Smart Cards.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <h5>
+                  IT - Infrastructure, Electronic <br />
+                  Equipment & Solutions
+                </h5>
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 80px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+                <div class="d-flex">
+                  <ul class="py-3">
+                    <li>Big Data & Analytics</li>
+                    <li>Broadcasting Solutions</li>
+                    <li>CMS</li>
+                    <li>Cloud solutions</li>
+                    <li>E-Safety and Privacy</li>
+                    <li>
+                      Hardware, Peripherals and <br />
+                      Devices
+                    </li>
+                    <li>
+                      Printers, 3D Printers, Scanners <br />
+                      & Photocopiers
+                    </li>
+                  </ul>
+                  <ul class="py-3">
+                    <li>Network Infrastructure</li>
+                    <li>Network Management Tools</li>
+                    <li>Network Security Solutions</li>
+                    <li>Recording Equipment</li>
+                    <li>Visualization</li>
+                    <li>Web Designing</li>
+                    <li>Wireless / Wi-Fi</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <h5>Schools & Colleges / Institutes & Universities</h5>
+                <div class="pt-2">
+                  <div
+                    style="
+                      border-top: 2px solid #fff;
+                      border-bottom: 2px solid #fff;
+                      width: 80px;
+                      border-radius: 12px;
+                    "
+                  ></div>
+                </div>
+                <ul class="py-3">
+                  <li>Business Schools, High Schools, Private Schools</li>
+                  <li>Diploma Courses & Distance learning Institutes</li>
+                  <li>Language Learning Institutes</li>
+                  <li>Polytechnics</li>
+                  <li>Scientific Research Institutions</li>
+                  <li>Technical Institutes</li>
+                  <li>General Universities & Colleges</li>
+                  <li>Business Colleges</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_eight">
+      <div class="container">
+        <div class="row py-5 text-light">
+          <div class="col-md-6" data-aos="fade-right">
+            <div>
+              <h2>Why Sponsor?</h2>
+              <p>
+                Sponsoring the EduTech Oman 2040 Conference is one of the best
+                ways to put your organization into the spotlight while
+                interacting with like-minded peers from the field of education.
+                Here are some of the benefits our sponsors receive
+              </p>
+            </div>
+            <div>
+              <h3>Creating Brand Awareness</h3>
+              <p>
+                You get in front of sizable audiences who might be looking for
+                what you have to offer. With our sponsorships, you increase
+                brand recognition and receive featured advertisements
+              </p>
+            </div>
+            <div>
+              <h3>Targeted Marketing</h3>
+              <p>
+                You have more chances to interact directly with customers
+                seeking suitable product solutions. You can even schedule a
+                meeting with niche audiences or organizations
+              </p>
+            </div>
+            <div>
+              <h3>Efficient Lead Generation</h3>
+              <p>
+                Consider how long it typically takes you to find 10 quality
+                leads. Would you like 20, 50, or 100? EduTech Oman 2040
+                Conference not only attracts a large number of compatible
+                clients, but they also highlight the human side of your
+                institution
+              </p>
+            </div>
+            <div>
+              <h3>Business Collaborations</h3>
+              <p>
+                Are you looking for new partnerships? Our event provides an
+                ideal platform to find partners you can work with, now and in
+                the future
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_nine">
+      <div class="container">
+        <div class="row py-5 text-light">
+          <div class="col-md-6"></div>
+          <div class="col-md-6" data-aos="fade-left">
+            <div>
+              <h2>Why Exhibit?</h2>
+              <p>
+                Exhibiting at the EduTech Oman 2040 helps you elevate your
+                organization to a larger and more diverse audience in real time.
+                Here are the key reasons why you should exhibit at our event.
+              </p>
+            </div>
+            <div>
+              <h3>Meet & Greet Educationists</h3>
+              <p>
+                EduTech Oman 2040 provides a fantastic opportunity to establish
+                connections through our exhibition spaces.
+              </p>
+            </div>
+            <div>
+              <h3>Expose your Brand to An Engaging Audience</h3>
+              <p>
+                A focused audience of 200+ senior professionals will be exposed
+                to your brand when you exhibit with us.
+              </p>
+            </div>
+            <div>
+              <h3>Showcase Your Products & Services</h3>
+              <p>
+                With several educators, researchers, and eager investors
+                attending the event, you can promote your brand new products and
+                services and grab the anticipated outcomes.
+              </p>
+            </div>
+            <div>
+              <h3>Gain Potential Partners</h3>
+              <p>
+                Give voice to your organization and let it attract potential
+                clients and partners. To do that, you can sponsor and showcase
+                your products or services that can revolutionize the education
+                sector as we know it! platform to find partners you can work
+                with, now and in the future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_tenth">
+      <div class="container pt-5">
+        <h3 class="text-center">Workshops at EduTech Oman 2040</h3>
+        <div class="row py-4">
+          <div class="col-md-6" data-aos="fade-right">
+            <p>
+              Live interactive workshops organized by ParXcellence will be held
+              at EduTech Oman 2040 conference.
+            </p>
+            <p>
+              The objective is to empower educators on various advancements in
+              the education and training sector.
+            </p>
+            <p>
+              It is a series of professional development workshops for educators
+              in Oman. Power-packed sessions are conducted over 2 days.
+            </p>
+
+            <p>
+              The workshops are attended by teachers, trainers, senior
+              management, academicians and professors of education institutions
+              from all across the country.
+            </p>
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <div>
+              <h6>
+                EduTech Oman 2040 Workshops allow teachers, trainers and faculty
+                members to explore multiple facets of:
+              </h6>
+              <div class="py-2">
+                <div
+                  style="
+                    border-top: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    width: 50px;
+                    border-radius: 12px;
+                  "
+                ></div>
+              </div>
+              <ul>
+                <li>
+                  Implementation and impact of technological advancements.
+                </li>
+                <li>Curriculum changes.</li>
+                <li>Inclusive environments.</li>
+                <li>Sports integration and</li>
+                <li>
+                  Other breakthroughs, both internationally and nationally.
+                </li>
+              </ul>
+            </div>
+            <div class="pt-5">
+              <h5>
+                Conducted by prominent companies, the workshops train educators
+                in:
+              </h5>
+              <div class="py-2">
+                <div
+                  style="
+                    border-top: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    width: 50px;
+                    border-radius: 12px;
+                  "
+                ></div>
+              </div>
+              <ul>
+                <li>Enhancing Teaching and Learning</li>
+                <li>
+                  Exploring aspects in using and implementing of technological
+                  advancements
+                </li>
+                <li>Meeting Faculty development and technology needs</li>
+                <li>Formulating and discussing new initiatives</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section_eleventh" class="py-5">
+      <div class="container">
+        <div class="text-center pb-5">
+          <h2>Workshops at EduTech Oman 2040</h2>
+        </div>
+        <div class="cards">
+          <a
+            href="https://www.decodingit.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="200"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/dit-logo-ar-f-removebg.png"
+                alt="img"
+                width="300"
+              />
+              <h4 class="py-3">Platinum Sponsor</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://www.anthology.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/anthology-primary.png"
+                alt="img"
+                width="240"
+              />
+              <h4 class="py-3">Gold Sponsor</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://aws.amazon.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/aws.png"
+                alt="img"
+                width="160"
+              />
+              <h4 class="py-3">Exhibiting & Name Batch Lanyard Sponsor</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://www.ieducore.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="200"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/educore-removebg-preview-687.png"
+                alt="img"
+                width="220"
+              />
+              <h4 class="py-3">Exhibiting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://www.oaqhe.org.om/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/oaqhe_logo-removebg-preview-800.png"
+                alt="img"
+                width="260"
+              />
+              <h4 class="py-3">Higher Education Success Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://knowledgeoman.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/knowledge_oman-removebg-preview-497.png"
+                alt="img"
+                width="260"
+              />
+              <h4 class="py-3">Knowledge Community Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://finnisheducationinstitute.fi/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="200"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/fei-logo-320.png"
+                alt="img"
+                width="260"
+              />
+              <h4 class="py-3">Finnish Education Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="http://inmaedu.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/inma_logo_1-removebg-preview-800.png"
+                alt="img"
+                width="260"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://muscatcollege.edu.om/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/logo_with_line_muscat_co-removebg-preview-800.png"
+                alt="img"
+                width="320"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://www.fos.edu.om/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="200"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/finland_oman_school-removebg-preview-500.png"
+                alt="img"
+                width="200"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://britishschoolmuscat.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/bsm-logo-banner-navy-500.png"
+                alt="img"
+                width="320"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://gcet.edu.om/en/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/gcet-removebg-preview-422.png"
+                alt="img"
+                width="240"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://positive-ed.co.uk/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="200"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/mental-toughness-1-500.png"
+                alt="img"
+                width="280"
+              />
+              <h4 class="py-3">Supporting Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://educationmiddleeast.com/"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/education_logo__1_-1-removebg-preview-774.png"
+                alt="img"
+                width="260"
+              />
+              <h4 class="py-3">Media Partner</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScE8oeCZQH-T_hQxyRpbfHVd5EnDZTJXNz_oYujmiKfnHScUA/viewform"
+            target="_blank"
+            class="card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <div class="card_link">
+              <img
+                src="./assets/imgs/company_logos/pexels-pixabay-416405-800.jpg"
+                alt="img"
+                width="260"
+                class="rounded"
+              />
+              <h4 class="py-3">Delegate Registration</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="jobApplication_form">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-6 d-flex flex-column"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <h1 class="cat-item">Get in Touch With Us</h1>
+            <div class="p-3">
+              <span>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a
+              ></span>
+              <span
+                ><a href="#"><i class="fa-sharp fa-solid fa-envelope"></i></a
+              ></span>
+            </div>
+          </div>
+          <div
+            class="col-lg-6"
+            id="contactForm"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+          >
+            <iframe name="iframe" style="display: none"></iframe>
+            <form
+              action="./phpmailer/mail.php"
+              method="post"
+              target="iframe"
+              name="form"
+            >
+              <div class="form-row">
+                <div class="col form-group">
+                  <label for="form_name">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    autocomplete="off"
+                    id="form_name"
+                    onkeydown="preventNumberInput(event)"
+                    maxlength="30"
+                    onkeyup="preventNumberInput(event)"
+                    required
+                    class="form-control"
+                  />
+                  <p class="text-danger namePara error" id="errorname">
+                    Please Enter the name to submit.
+                  </p>
+                </div>
+
+                <div class="col form-group">
+                  <label for="form_email">Email</label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    autocomplete="off"
+                    id="form_email"
+                    required
+                  />
+                  <p class="text-danger emailPara error" id="erroremail">
+                    Please Enter the email to submit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label for="form_company">Company</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    autocomplete="off"
+                    name="company"
+                    id="form_company"
+                    required
+                  />
+                  <p class="text-danger companyPara error" id="errorcompany">
+                    Please Enter the company name to submit.
+                  </p>
+                </div>
+                <div class="col form-group">
+                  <label for="form_jobtitle">Job Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    autocomplete="off"
+                    name="jobtitle"
+                    id="form_jobtitle"
+                    required
+                  />
+                  <p class="text-danger placePara error" id="errorjobtitle">
+                    Please Enter the job title to submit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label for="form_phone">Phone No.</label>
+                  <input
+                    class="form-control no-arrows"
+                    min="8"
+                    type="number"
+                    autocomplete="off"
+                    name="phone"
+                    id="form_phone"
+                    minlength="10"
+                    maxlength="14"
+                    required
+                  />
+                  <p class="text-danger phonePara error" id="errorphone">
+                    Please Enter the valid phone number to submit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col form-group">
+                  <label for="comment">Comments</label>
+                  <textarea name="comment" id="form_comment"></textarea>
+                  <p class="text-danger commentPara error" id="errorcomment">
+                    Please write something for us to submit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="text-start mt-1">
+                <button
+                  id="sendMail"
+                  type="submit"
+                  class="btn btn-md text-white"
+                  onclick="sendEmail()"
+                  disabled
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+
+            <h6 id="successful_mail" class="text-danger py-2 mt-2">
+              Thank you for applying. please check the confirmation mail!
+            </h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div
+        class="container"
+        data-aos="fade"
+        data-aos-duration="1200"
+        data-aos-easing="ease-out"
+      >
+        <div class="row py-3">
+          <div class="col-md-6">
+            <h6>All Rights Reserved</h6>
+            <h5>ParXcellence</h5>
+          </div>
+          <div class="col-md-6">
+            <h6>
+              Email:
+              <a href="mailto:info@parxcellence.com" style="font-size: 20px">
+                info@parxcellence.com</a
+              >
+            </h6>
+            <p>By writing to us you agree by the privacy policy</p>
+            <div class="">
+              <span>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a
+              ></span>
+              <span
+                ><a href="#"><i class="fa-sharp fa-solid fa-envelope"></i></a
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js.map"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+      //signup form validation
+      $(function () {
+        $("#errorname").hide();
+        $("#erroremail").hide();
+        $("#errorcompany").hide();
+        $("#errorjobtitle").hide();
+        $("#errorphone").hide();
+        $("#errorcomment").hide();
+
+        var error_name = false;
+        var error_email = false;
+        var error_company = false;
+        var error_jobtitle = false;
+        var error_phone = false;
+        var error_comment = false;
+
+        $("#form_name").focusout(function () {
+          checkName();
+        });
+        $("#form_email").focusout(function () {
+          checkEmail();
+        });
+        $("#form_company").focusout(function () {
+          checkCompany();
+        });
+        $("#form_phone").focusout(function () {
+          checkPhone();
+        });
+        $("#form_jobtitle").focusout(function () {
+          checkJobtitle();
+        });
+        $("#form_comment").focusout(function () {
+          checkComment();
+        });
+
+        // check name
+        function checkName() {
+          var name = $("#form_name").val();
+          var pattern = new RegExp(/^[a-zA-Z ]{3,15}$/);
+          if (!pattern.test(name)) {
+            $("#errorname").html("Please Enter a valid name.");
+            $("#errorname").show(300);
+            error_name = true;
+          } else {
+            $("#errorname").hide(400);
+          }
+        }
+
+        // check company
+        function checkCompany() {
+          var company = $("#form_company").val();
+          var pattern = new RegExp(/^[a-zA-Z ]{3,15}$/);
+          if (!pattern.test(company)) {
+            $("#errorcompany").html("Please Enter a Company name.");
+            $("#errorcompany").show(300);
+            error_company = true;
+          } else {
+            $("#errorcompany").hide(400);
+          }
+        }
+
+        // check jobtitle
+        function checkJobtitle() {
+          var jobtitle = $("#form_jobtitle").val();
+          var pattern = new RegExp(/^[a-zA-Z ]{3,15}$/);
+          if (!pattern.test(jobtitle)) {
+            $("#errorjobtitle").html("Please Enter a Job Title.");
+            $("#errorjobtitle").show(300);
+            error_company = true;
+          } else {
+            $("#errorjobtitle").hide(400);
+          }
+        }
+        // check comment
+        function checkComment() {
+          var comment = $("#form_comment").val();
+          var pattern = new RegExp(/^[a-zA-Z ]{3,15}$/);
+          if (!pattern.test(comment)) {
+            $("#errorcomment").html("Please write something for us to submit.");
+            $("#errorcomment").show(300);
+            error_company = true;
+          } else {
+            $("#errorcomment").hide(400);
+          }
+        }
+
+        //check email
+        function checkEmail() {
+          var pattern = new RegExp(
+            /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i
+          );
+          if (pattern.test($("#form_email").val())) {
+            $("#erroremail").hide(400);
+          } else {
+            $("#erroremail").html("Please enter a valid email address.");
+            $("#erroremail").show(300);
+            error_email = true;
+          }
+        }
+
+        // check phone
+        function checkPhone() {
+          var phone = $("#form_phone").val();
+          var pattern = new RegExp(
+            /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[123456789]\d{9}$/
+          );
+          if (!pattern.test(phone)) {
+            $("#errorphone").html("Please enter a valid phone number.");
+            $("#errorphone").show(300);
+            error_name = true;
+          } else {
+            $("#errorphone").hide(400);
+          }
+        }
+
+        function validateForm() {
+          error_name = false;
+          error_email = false;
+          error_company = false;
+          error_jobtitle = false;
+          error_phone = false;
+          error_comment = false;
+
+          checkName();
+          checkEmail();
+          checkJobtitle();
+          checkPhone();
+          checkCompany();
+          checkComment();
+
+          if (
+            error_name == false &&
+            error_email == false &&
+            error_phone == false &&
+            error_company == false &&
+            error_jobtitle == false &&
+            error_comment
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        $("#sendMail").submit(function () {
+          validateForm();
+        });
+      });
+    </script>
+
+    <script>
+      function preventNumberInput(e) {
+        var keycode = e.keycode ? e.keycode : e.which;
+        if ((keycode > 47 && keycode < 58) || (keycode > 95 && keycode < 107)) {
+          e.preventDefault();
+        }
+      }
+      $("#sendMail").attr("disabled", true);
+
+      function recaptchaCallback() {
+        // $("#sendMail").attr("disabled", true);
+        $("#sendMail").removeAttr("disabled");
+      }
+
+      const form = document.querySelector("form");
+      const submitButton = document.querySelector("#sendMail");
+
+      form.addEventListener("input", () => {
+        const name = document.querySelector("#form_name").value;
+        const email = document.querySelector("#form_email").value;
+        const phone = document.querySelector("#form_phone").value;
+        const company = document.querySelector("#form_company").value;
+        const jobtitle = document.querySelector("#form_jobtitle").value;
+
+        if (
+          name.length >= 2 &&
+          name.length <= 50 &&
+          email.includes("@") &&
+          email.length >= 6 &&
+          phone.length === 10 &&
+          company.length >= 2 &&
+          company.length <= 50 &&
+          jobtitle.length >= 2 &&
+          jobtitle.length <= 20
+        ) {
+          //  $('#sendMail').removeAttr('disabled')
+          $("#sendMail").attr("disabled", false);
+        } else {
+          //  $('#sendMail').('disabled')
+          $("#sendMail").attr("disabled", true);
+        }
+      });
+
+      const successMsg = document.querySelector("#successful_mail");
+      successMsg.style.display = "none";
+
+      function sendEmail() {
+        successMsg.style.display = "block";
+      }
+    </script>
+
+    <!-- <script>
+      function preventNumberInput(e) {
+        var keycode = e.keycode ? e.keycode : e.which;
+        if ((keycode > 47 && keycode < 58) || (keycode > 95 && keycode < 107)) {
+          e.preventDefault();
+        }
+      }
+
+      function recaptchaCallback() {
+        $("#sendMail").attr("disabled", true);
+      }
+
+      const form = document.querySelector("form");
+      const submitButton = document.querySelector("#sendMail");
+
+      form.addEventListener("input", () => {
+        const name = document.querySelector("#form_name").value;
+        const email = document.querySelector("#form_email").value;
+        const phone = document.querySelector("#form_phone").value;
+        const company = document.querySelector("#form_company").value;
+        const jobtitle = document.querySelector("#form_jobtitle").value;
+        const comments = document.querySelector("#comments").value;
+
+        if (
+          name.length >= 2 &&
+          name.length <= 50 &&
+          email.includes("@") &&
+          email.includes(".") &&
+          email.length >= 6 &&
+          phone.length === 10 &&
+          company.length >= 2 &&
+          company.length <= 50 &&
+          jobtitle.length >= 2 &&
+          jobtitle.length <= 20 &&
+          comments.length >= 2
+        ) {
+          //  $('#sendMail').removeAttr('disabled')
+          $("#sendMail").attr("disabled", false);
+        } else {
+          //  $('#sendMail').('disabled')
+          $("#sendMail").attr("disabled", true);
+        }
+      });
+
+      const successMsg = document.querySelector("#successful_mail");
+      successMsg.style.display = "none";
+
+      function sendEmail() {
+        successMsg.style.display = "block";
+      }
+    </script> -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      //---------------------Landing Page ScrollTrigger---------------------
+      function LandingPageScrollTrigger() {
+        gsap.to("body", {
+          // LoadingAnimation---------------------
+          opacity: 1,
+          duration: 1.3,
+        }); // /LoadingAnimation---------------------
+
+        $("#codeby a").mouseenter(function () {
+          // HoverAnimation---------------------
+          gsap.to("#ImgWrapper", {
+            backgroundColor: "#f0f0f0",
+          });
+          gsap.to("#codeby a", {
+            color: "#2e2e2e",
+          });
+          gsap.to("#codeby a span", {
+            color: "#000000",
+          });
+        });
+        $("#codeby a").mouseout(function () {
+          gsap.to("#ImgWrapper", {
+            backgroundColor: "#000000",
+          });
+          gsap.to("#codeby a", {
+            color: "#e6e6e6",
+          });
+          gsap.to("#codeby a span", {
+            color: "#f0f0f0",
+          });
+        }); // /HoverAnimation---------------------
+
+        let LandingPageScrollTrigger = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#ImgWrapper",
+            start: "0% 0%",
+            end: "100% 0%",
+            pin: "#ImgWrapper",
+            scrub: 2.2,
+          },
+        });
+        LandingPageScrollTrigger.to(
+          "#ImgWrapper #img7",
+          {
+            transform: "translateZ(4500px)",
+          },
+          0
+        )
+          .to(
+            "#ImgWrapper #img6",
+            {
+              transform: "translateZ(3700px)",
+            },
+            0
+          )
+          .to(
+            "#ImgWrapper #img5",
+            {
+              transform: "translateZ(3100px)",
+            },
+            0
+          )
+          .to(
+            "#ImgWrapper #img4",
+            {
+              transform: "translateZ(2800px)",
+            },
+            0
+          )
+          .to(
+            "#ImgWrapper #img3",
+            {
+              transform: "translateZ(2600px)",
+            },
+            0
+          )
+          .to(
+            "#ImgWrapper #img2",
+            {
+              transform: "translateZ(2400px)",
+            },
+            0
+          )
+          .to(
+            "#ImgWrapper #img1",
+            {
+              transform: "translateZ(2200px)",
+            },
+            0
+          )
+          .from(
+            "#codeby a",
+            {
+              y: 130,
+              opacity: 0,
+            },
+            0.31
+          );
+      }
+      //---------------------/Landing Page ScrollTrigger---------------------
+
+      window.onload = () => {
+        LandingPageScrollTrigger();
+      };
+    </script>
+
+    <script src="./assets/js/gsap.js"></script>
+    <script src="./assets/js/scrolltriggergsap.js"></script>
+
+    <script>
+      let bgImage = document.querySelector(".img-container");
+
+      //  Now registering thescrollTrigger plugin to gsap
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Now we are going to animate
+      gsap.fromTo(
+        bgImage,
+        {
+          clipPath: "circle(5% at 50% 40%)",
+        },
+        {
+          clipPath: "circle(75% at 50% 50%)",
+          ease: "none",
+
+          //  We want to do that animation on scroll
+          scrollTrigger: {
+            trigger: bgImage,
+            scrub: 1,
+            start: "top center",
+            end: "top center-=200",
+          },
+        }
+      );
+    </script>
+
+    <script src="./assets/js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Duration of animation in milliseconds
+        easing: "ease-in-out", // Easing function to control the animation speed
+        once: false, // Whether to trigger animations only once or every time element comes into view
+      });
+    </script>
+  </body>
+</html>
